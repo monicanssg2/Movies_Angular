@@ -1,0 +1,61 @@
+<app-header [headerTrendingMovies]='trendingMovies'></app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="border my-5 w-25"></div>
+            <h2>Trending Movies <br> To Watch Right Now</h2>
+            <p class="second-color">Trending Movies To Watch Right Now</p>
+            <div class="border my-5 w-100"></div>
+        </div>
+        <div *ngFor="let movie of trendingMovies" class="col-md-2 position-relative">
+            <div class="movie">
+                <a [routerLink]= "['/moviedetails', movie.id]">
+                    <img class="w-100" [src]="imgPrefix+movie.poster_path" alt="">
+                    <h3 class="h6">{{movie.title}}</h3>
+                    <div class="vote position-absolute end-0 top-0">
+                    {{movie.vote_average}}
+                    </div>
+                </a>
+            </div>
+    
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-md-4">
+            <div class="border my-5 w-25"></div>
+            <h2>Trending TVs <br> To Watch Right Now</h2>
+            <p class="second-color">Trending Tvs To Watch Right Now</p>
+            <div class="border my-5 w-100"></div>
+        </div>
+        <div *ngFor="let movie of trendingTV" class="col-md-2 position-relative">
+            <div class="movie">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" alt="">
+                <h3 class="h6">{{movie.name}}</h3>
+                <div class="vote position-absolute end-0 top-0">
+                {{movie.vote_average}}
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="border my-5 w-25"></div>
+            <h2>Trending People <br> To Watch Right Now</h2>
+            <p class="second-color">Trending People To Watch Right Now</p>
+            <div class="border my-5 w-100"></div>
+        </div>
+        <div *ngFor= 'let movie of trendingPeople' class="col-md-2 position-relative">
+            <div class="movie">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" alt="">
+                <h3 class="h6">{{movie.title}}</h3>
+                <div class="vote position-absolute end-0 top-0">
+                {{movie.vote_average}}
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+</div>
